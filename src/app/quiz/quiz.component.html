@@ -5,7 +5,8 @@
     <button class="btn--outline">Reset</button>
   </section>
   <section class="quiz_questions-list">
-    <app-question></app-question>
+    <h4>{{ categoryService.category.label }}</h4>
+    <app-question [categoryId]="categoryId"></app-question>
   </section>
   <div class="quiz_validation">
     <button (click)="goToResultPage()" class="btn">Show score</button>

@@ -1,0 +1,13 @@
+<div class="categories">
+  <form (ngSubmit)="search()">
+    <input name ="searchText" type="text" [(ngModel)]="searchText">
+    <button type="submit" >Search</button>
+    <button (click)="clear()">Clear</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let category of categoryService.categories">
+      <a [routerLink]="['/quiz', category.id, playerName]">{{category.label}}</a>
+    </li>
+  </ul>
+</div>

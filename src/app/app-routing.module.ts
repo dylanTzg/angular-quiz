@@ -1,23 +1,24 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from "./home/home.component";
-import { QuizComponent } from "./quiz/quiz.component";
-import { ResultComponent } from "./quiz/result/result.component";
-import { LoginComponent } from "./auth/login/login.component";
-import { RegisterComponent } from "./auth/register/register.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {HomeComponent} from "./home/home.component";
+import {QuizComponent} from "./quiz/quiz.component";
+import {ResultComponent} from "./quiz/result/result.component";
+import {LoginComponent} from "./auth/login/login.component";
+import {RegisterComponent} from "./auth/register/register.component";
+import {CategoryComponent} from "./category/category.component";
 
 const routes: Routes = [
   {
     path: '',
-    component : HomeComponent
+    component: HomeComponent
   },
   {
-    path: 'quiz/:playerName',
-    component : QuizComponent
+    path: 'quiz/:categoryId/:playerName',
+    component: QuizComponent
   },
   {
     path: 'result',
-    component : ResultComponent
+    component: ResultComponent
   },
   {
     path: 'login',
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'categories/:playerName',
+    component: CategoryComponent
   }
 ];
 
@@ -33,4 +38,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
